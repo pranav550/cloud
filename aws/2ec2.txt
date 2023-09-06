@@ -1,0 +1,63 @@
+ec2(elastic compute cloud)->create a virtual machine on demand
+
+=>ubuntu
+=>check os
+cat /etc/os-release
+
+=> check memory
+free -m
+
+=>how many cpu?
+lscpu
+
+=>check c drive?
+df -h
+
+=>check ip
+ip -a provide private ip
+
+##################practical with nginx install??############################
+
+sudo su/ sudo -i
+apt-get update
+
+nginix -t
+apt install nginx-core
+nginx -t
+systemctl status nginx
+curl localhost
+cd /var/www/html
+ls
+cat index
+echo "pranav">index.html
+curl localhost
+
+########################### bootstrap #####################################
+
+#!/bin/bash
+apt-get update
+apt-get install nginx -y
+echo "Welcome to india"> /var/www/html/index.html
+
+
+######################## private ip address ##############################
+ip -a
+
+################### check public ip other information #############################
+
+curl 169.254.169.254/latest/meta-data/public-ipv4 - public ip
+curl 169.254.169.254/latest/meta-data/local-ipv4 - private ip
+
+
+########################### Elastic ip ###########################################
+Q when we stop instance my public ip is change?
+Attach elastic ip/static ip
+
+by default aws give 5 elastic ip
+Attach elastic ip:-
+associate elastic ip and add instance
+
+Remove elastic ip:-
+de associate elastic ip
+
+

@@ -1,0 +1,7 @@
+EBS:attach extra volume in linux and windows over the network
+
+ebs volume attach same availability zone
+
+Type of eBS Volumes:
+
+

@@ -1,0 +1,47 @@
+Iaas->hardware me os daalkar dena like ec2
+Paas->Iaas me database daal diya like  rds
+Saas->use completely handled by aws
+
+
+############################### Type of cloud #####################################
+1)Public->Any one can use
+2)Private->Company ke member hi use kar sakte hai
+3)Hybrid->combination of public and private
+
+
+######################################  Pricing:- #######################################
+1)compute
+2)storage
+3)Data transfer(Download,upload from outside)
+
+######################################AWS Global Infrastructure:- #############################
+Region:- 32 region
+Availability zone:- 102 
+Data center/ edge location:- 550
+
+one region have multiple Availability zone
+one Availability zone have multiple Data center
+
+##################################Region #######################################
+
+All region connected to each other , each region has code, 100GB/s
+Recovery we use region
+Around 200+ service are there in aws
+
+NOTE:- All services are not Available of each region
+
+############################################ Availability zone ##################################
+Each region have 2 Availability zone and more 
+
+Availability zone is 100 km far to each other all Availability zone are communicated to each other
+
+###################################### local zone ##################################
+
+some service are Available are in local zone
+service are used for nearest  edge location and local zone
+
+
+
+
+
+
