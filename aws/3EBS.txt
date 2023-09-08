@@ -3,5 +3,83 @@ EBS:attach extra volume in linux and windows over the network
 ebs volume attach same availability zone
 
 Type of eBS Volumes:
+1)General Purpose SSD(gp2):- balance price and speed , i/o is less
+2)General Purpose SSD(gp3):-
+3)Provisioned iops ssd (io1):- i/o per sec , multi attch instance, high speed input output operation
+4)Provisioned iops ssd (io2):-
+5)Cold Hdd:- less frequent used
+6)Throughput optimized:- how much data transfered, more frequently used
+7)Magnetic:- not used
+
+in linux:-
+lsblk
+
+file -s /dev/xvdf
+
+
+############################################  addvolume:- #################################
+
+mkfs.ext4 /dev/xvdf
+mkdir /test
+ls
+mount /dev/xvdf /test/
+mountpoint /test
+cd /test
+echo "pranav">abc.txt
+
+remove volume:
+umount /test/
+
+##################################### modify ebs volume  ##################################################
+resize2fs /dev/xvdf
+
+######################################### modify root volume ############################################
+=>when ext4
+growpart /dev/xvda 1
+resize2fs /dev/xvdf1
+
+=>when xfs
+xfs_growfs 
+
+
+################################### snapshot ###############################################
+snapshot:-means take a backup of data
+
+we can transfered volume from one availability zone to another availability zone by using snapshot
+
+sudo file -s /dev/xvdb
+sudo mkfs.ext4 /dev/xvdb
+sudo mkdir /data
+mount /dev/xvdb /data
+mountpoint /data
+cd /data
+yes "pranav" >>abc.txt
+ctrl +c
+ls -lh
+df -h
+echo "this is new file">/data/xyz.txt
+
+################################### Automate backup/snapshot ####################################
+1)create volume/instance
+2)go to lifecycle manager there we schedule to take a Automatic backup
+
+#################################### snapshot and recycle bin ################################
+
+create recycle bin for snapshot,machine
+if u delete it goes to recycle bin where we restore again
+
+
+##################################### move snapshot to another region #####################################
+
+1)copy snapshot
+2)change region name
+
+#################################### Encrypt EBS Volume ########################################
+
+1)
+
+
+
+
 
 

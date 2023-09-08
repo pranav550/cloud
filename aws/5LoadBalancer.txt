@@ -1,0 +1,80 @@
+AWS support four type of load balancer:-
+1)Application Load Balancer
+2)Network Load Balancer
+3)Gateway Load Balancer-> it support for http, https, TCP, TLS
+4)Classic Load Balancer-> it support for http/https
+
+############################Classic Load Balancer:-#####################################
+it work on Layer 4 and layer 7
+1)create 2 instance for different availability zone
+
+1a availability zone
+
+#!/bin/bash
+apt-get update
+apt-get install nginx -y
+echo "server 1 $(hostname)">/var/www/html/index.html
+
+1b availability zone
+
+#!/bin/bash
+apt-get update
+apt-get install nginx -y
+echo "server 2 $(hostname)">/var/www/html/index.html
+
+##############################Application Load Balancer:- ##############################################
+
+create new security group
+
+if u getting 503 on load balancer??
+check target group instance is added or not
+
+
+
+
+################################## path based routing ######################################
+
+1a availability zone
+
+#!/bin/bash
+apt-get update
+apt-get install nginx -y
+mkdir -p /var/www/html/test
+echo "server 1 $(hostname)">/var/www/html/test/index.html
+
+1b availability zone
+
+#!/bin/bash
+apt-get update
+apt-get install nginx -y
+mkdir -p /var/www/html/test
+echo "server 2 $(hostname)">/var/www/html/test/index.html
+
+in loadbalancer listener -> view and edit rules ->path, Http Header, Host Header, Http Request method, 
+query string, sourceIP
+
+############################# Get logs, Client Ip #################################
+
+# logs:-
+cd /var/log/nginx/
+tail -f *.log
+
+cd /etc/nginx
+ls
+
+sudo su
+nginx.conf
+
+
+service nginx reload
+
+################################### Stickiness ###############################
+in load balancer all request are goes on one server 
+
+################################### Gateway loadbalancer ##############################
+
+it is faster than Application loadbalancer
+
+
+
+

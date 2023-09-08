@@ -1,0 +1,14 @@
+apt-get update/apt-get install nginx -y
+service nginx status/systemctl status nginx
+cd /var/www/html/
+echo "Welcome to nginx">index.html
+curl localhost
+systemctl start nginx
+
+instance ki image create kar sakte hain for backup mere application run ho jayegi easily
+
+
+
+delete
+1)de-register ami
+2)delete snapshot
